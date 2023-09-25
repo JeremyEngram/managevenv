@@ -1,0 +1,35 @@
+The instructions I provided earlier for setting a system-wide environment variable like $BASEDIR are applicable to Ubuntu Linux as well. Ubuntu is a Linux distribution, and the process for setting system-wide and user-specific environment variables is generally the same across most Linux distributions.
+
+Here's a summary of the steps for Ubuntu Linux:
+
+Create a System-wide Environment Variable:
+
+Open the system-level environment file, which is typically located at /etc/environment, using a text editor with administrative privileges, such as sudo nano:
+
+bash
+Copy code
+sudo nano /etc/environment
+Add the following line to set the BASEDIR variable:
+
+bash
+Copy code
+BASEDIR=/home/csi/gpt4all
+Save the file and exit the text editor.
+
+Modify User Environment Variables to Use $BASEDIR:
+
+Users can modify their own environment variables by adding lines like the following to their user-level environment files (~/.bashrc, ~/.bash_profile, etc.):
+
+bash
+Copy code
+export PATH="$BASEDIR/bin:$PATH"
+This example prepends the $BASEDIR/bin directory to the PATH environment variable.
+
+Apply Changes:
+
+Users can either log out and log back in or run the following command to apply the changes immediately:
+
+bash
+Copy code
+source ~/.bashrc
+These steps are consistent with how you can set system-wide and user-specific environment variables on Ubuntu Linux to make $BASEDIR available to all users' environment configurations.
